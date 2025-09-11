@@ -2,7 +2,6 @@ extends Node2D
 
 var walk_speed = 100
 var run_speed = 200
-
 # executa instruções quando o nó raiz é adicionado a cena
 func _ready():
 	
@@ -17,11 +16,9 @@ func _ready():
 #executa instruções a cada frame
 #delta = tempo desde último frame
 func _process(delta: float):
-	
 	#inicializando vetor2D (x, y) de direcao com zeros
 	#esse vetor vai armazenar uma direção (horizontal e vertical) com base em qual botão mapeado foi apertado
 	var vetor_direcao_input = Vector2.ZERO
-	
 	#captando pressionamento de teclas
 	#direita assume sempre valores positivos, enquanto esquerda negativos
 	vetor_direcao_input.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -40,9 +37,9 @@ func _process(delta: float):
 	if (Input.is_action_pressed("ui_shift") and Input.get_action_strength("ui_left") and get_global_mouse_position().x < global_position.x) or (Input.is_action_pressed("ui_shift") and Input.get_action_strength("ui_right") and get_global_mouse_position().x > global_position.x):
 		speed = run_speed
 	
-	#usando delta para garantir que independente da quantidade de frames por segundo o deslocamento (comprimento do vetor) seja sempre o mesmo
+	#usando delta para garantir que independente da quantidade de frames por segundo o desloawcamento (comprimento do vetor) seja sempre o mesmo
 	position += vetor_direcao_input * speed * delta
-
+	Global.p = self.position
 	#geranciando sprites
 	if vetor_direcao_input != Vector2.ZERO:
 		if speed == walk_speed:

@@ -29,7 +29,6 @@ func _process(delta: float):
 		gun.flip_v = true
 	else:
 		gun.flip_v = false
-		
 	#mudando gun position para o marker esquerdo caso arma tenha sido invertida em y
 	if gun.flip_v == true:
 		gun.position = gunMarkerLeft.position
