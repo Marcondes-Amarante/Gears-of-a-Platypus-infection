@@ -1,8 +1,21 @@
 extends CharacterBody2D
-
-
 const SPEED = 300.0
 
+func _ready():
+	var lot = randi_range(0, 4) 
+	if lot == 1:
+		self.position.x = -200
+		self.position.y = 275
+	elif lot == 2:
+		self.position.x = 1900
+		self.position.y = 260
+	elif lot == 3:
+		self.position.x = 200
+		self.position.y = -150
+	else:
+		self.position.x = 200
+		self.position.y = 1200
+		
 func _physics_process(delta: float) -> void:
 	
 	var sprite: AnimatedSprite2D = $muv
@@ -11,17 +24,17 @@ func _physics_process(delta: float) -> void:
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if (Global.p.x - 180) < self.position.x:
-		velocity.x = - 20
+		velocity.x = - 50
 		sprite.animation = "esquerda"
 		sprite.play()
 	else:
-		velocity.x = + 20
+		velocity.x = + 50
 		sprite.animation = "direita"
 		sprite.play()
 	if (Global.p.y - 50) < self.position.y:
-		velocity.y = - 20
+		velocity.y = - 50
 	else:
-		velocity.y = + 20
+		velocity.y = + 50
 	
 	var rity = (Global.p.y - 50) - self.position.y
 	var ritx = (Global.p.x - 180) - self.position.x
@@ -35,4 +48,5 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 	
 	move_and_slide()
-	get_slide_collision_count()
+	if get_slide_collision_count() > 0:
+		print(get_slide_collision_count())
