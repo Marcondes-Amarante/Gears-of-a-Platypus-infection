@@ -66,7 +66,6 @@ func _criar_bala():
 		bullet_instance.rotation = rotation
 		
 		municao_atual = municao_atual-1
-		print(municao_atual)
 	
 func _recarregar_arma():
 	if gun.animation == "reload":

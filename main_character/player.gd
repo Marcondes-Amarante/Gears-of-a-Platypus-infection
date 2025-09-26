@@ -1,8 +1,19 @@
-extends Node2D
+extends CharacterBody2D
 
 var walk_speed = 100
 var run_speed = 200
-# executa instruções quando o nó raiz é adicionado a cena
+
+@export var max_health: int = 4
+var current_health: int
+
+@export var forca_empurrao: float = 200.0
+@export var duracao_empurrao: float = 0.2
+var foi_empurrado: bool = false
+var tempo_empurrao: float = 0.0
+
+#obtendo referência dos sprites
+@onready var sprite: AnimatedSprite2D = $body
+
 func _ready():
 	
 	#definindo nó raiz para o centro da tela
@@ -10,16 +21,24 @@ func _ready():
 	$body.position = Vector2.ZERO
 	$AreaDano.position = Vector2.ZERO
 	
-#obtendo referência dos sprites
-@onready var sprite: AnimatedSprite2D = $body
+	current_health = max_health
+	
+	add_to_group("player")
 
-#executa instruções a cada frame
-#delta = tempo desde último frame
 func _process(delta: float):
-	#inicializando vetor2D (x, y) de direcao com zeros
+	
+	#bloqueando movimento momentaneamente se player foi empurrado
+	if foi_empurrado:
+		tempo_empurrao -= delta
+		if tempo_empurrao <= 0:
+			foi_empurrado = false
+			velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	#esse vetor vai armazenar uma direção (horizontal e vertical) com base em qual botão mapeado foi apertado
 	var vetor_direcao_input = Vector2.ZERO
-	#captando pressionamento de teclas
+
 	#direita assume sempre valores positivos, enquanto esquerda negativos
 	vetor_direcao_input.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	vetor_direcao_input.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -38,16 +57,20 @@ func _process(delta: float):
 		speed = run_speed
 	
 	#usando delta para garantir que independente da quantidade de frames por segundo o desloawcamento (comprimento do vetor) seja sempre o mesmo
-	position += vetor_direcao_input * speed * delta
+	velocity = vetor_direcao_input * speed
+	move_and_slide()
 	Global.p = self.position
+	
 	#geranciando sprites
 	if vetor_direcao_input != Vector2.ZERO:
 		if speed == walk_speed:
 			sprite.animation = "Walk"
+			
 		#tratando caso do personagem corre para trás:
 		#(mouse a direita + direção esquerda + shift)
 		elif (speed == run_speed and Input.get_action_strength("ui_left") and get_global_mouse_position().x > global_position.x):
 			sprite.animation = "Walk"
+			
 		#(mouse a esquerda + direcao direita + shift)
 		elif (speed == run_speed and Input.get_action_strength("ui_right") and get_global_mouse_position().x < global_position.x):
 			sprite.animation = "Walk"
@@ -63,3 +86,29 @@ func _process(delta: float):
 		sprite.flip_h = true
 	else:
 		sprite.flip_h = false
+		
+func decrease_health(qtd_damage: int, direcao_inimigo: Vector2):
+	current_health -= qtd_damage
+	print("player levou ", qtd_damage, " de dano e tem ", current_health, " de vida")
+	
+	#acionando empurrao
+	if direcao_inimigo != Vector2.ZERO:
+		var direcao_empurrao = (global_position - direcao_inimigo).normalized()
+		velocity = direcao_empurrao * forca_empurrao
+		foi_empurrado = true
+		tempo_empurrao = duracao_empurrao
+	
+	#acionando efeito de flash de dano
+	hit_flash_effect()
+		
+	if current_health <= 0:
+		die()
+
+func hit_flash_effect():
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate", Color(1, 0, 0, 0.5), 0.05)
+	tween.tween_property(sprite, "modulate", Color(1, 1, 1, 1), 0.05)
+	tween.set_loops(1)
+
+func die():
+	queue_free()

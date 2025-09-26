@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwwxur7yk6sua"]
+[gd_scene load_steps=5 format=3 uid="uid://dwwxur7yk6sua"]
 
 [ext_resource type="PackedScene" uid="uid://bpo3tleomk4tn" path="res://main_character/player.tscn" id="1_pjrb6"]
 [ext_resource type="Script" uid="uid://clkibwymr7wbc" path="res://main/spauner.gd" id="2_c651c"]
-[ext_resource type="PackedScene" uid="uid://bosdoy4gwwk2i" path="res://bat/bat.tscn" id="2_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://b0kjxyw8bss2f" path="res://enemies/zombieGrande.tscn" id="3_c651c"]
+[ext_resource type="PackedScene" uid="uid://ckvi528v88gmh" path="res://enemies/batV2.tscn" id="4_3wy1v"]
 
 [node name="Main" type="Node"]
 
@@ -12,5 +13,22 @@
 
 [node name="Spauner" type="Node2D" parent="."]
 script = ExtResource("2_c651c")
+big_zombie = ExtResource("3_c651c")
+bat = ExtResource("4_3wy1v")
 
-[node name="Zumbi" parent="Spauner" instance=ExtResource("2_xwkvk")]
+[node name="spawnPoint1" type="Marker2D" parent="Spauner"]
+
+[node name="spawnPoint2" type="Marker2D" parent="Spauner"]
+position = Vector2(563, 2)
+
+[node name="spawnPoint3" type="Marker2D" parent="Spauner"]
+position = Vector2(1152, 1)
+
+[node name="spawnPoint4" type="Marker2D" parent="Spauner"]
+position = Vector2(2, 645)
+
+[node name="spawnPoint5" type="Marker2D" parent="Spauner"]
+position = Vector2(582, 646)
+
+[node name="spawnPoint6" type="Marker2D" parent="Spauner"]
+position = Vector2(1149, 646)
