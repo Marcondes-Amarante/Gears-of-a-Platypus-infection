@@ -1,0 +1,292 @@
+[gd_scene load_steps=30 format=3 uid="uid://1s1ac1onlmuy"]
+
+[ext_resource type="Texture2D" uid="uid://cg3uns6yp3kvv" path="res://hud/sprite_heart_full.png" id="1_2gk58"]
+[ext_resource type="Script" uid="uid://136230tubfh1" path="res://hud/hud.gd" id="1_svhta"]
+[ext_resource type="Texture2D" uid="uid://bv030t3j4ni8y" path="res://hud/Pistol-Bullet.png" id="2_318vg"]
+[ext_resource type="FontFile" uid="uid://xf47kmwbt07y" path="res://hud/Jersey10-Regular.ttf" id="3_318vg"]
+[ext_resource type="Texture2D" uid="uid://clor68b1gyn4l" path="res://hud/hour_glass_anim.png" id="4_w8tcp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w8tcp"]
+font = ExtResource("3_318vg")
+font_size = 25
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8tcp"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svhta"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjv1a"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ivg5"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kkc0"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv4qp"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh35x"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gms7k"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwufu"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq7b8"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvpmi"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ad4"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jxvb"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt78x"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_put16"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bw3r"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfqsj"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyvac"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02s75"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci6th"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaxwh"]
+atlas = ExtResource("4_w8tcp")
+region = Rect2(640, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5syde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8tcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svhta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjv1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ivg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kkc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv4qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh35x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gms7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwufu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq7b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvpmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ad4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jxvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt78x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_put16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bw3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfqsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyvac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02s75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci6th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaxwh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_svhta"]
+font = ExtResource("3_318vg")
+font_size = 31
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_svhta")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hearts_container" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 186.0
+offset_bottom = 55.0
+
+[node name="heart1" type="TextureRect" parent="Control/Hearts_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_2gk58")
+expand_mode = 2
+
+[node name="heart2" type="TextureRect" parent="Control/Hearts_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_2gk58")
+expand_mode = 2
+
+[node name="heart3" type="TextureRect" parent="Control/Hearts_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_2gk58")
+expand_mode = 2
+
+[node name="heart4" type="TextureRect" parent="Control/Hearts_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_2gk58")
+expand_mode = 2
+
+[node name="Bullets_container" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = -261.0
+offset_right = 61.0
+offset_bottom = -221.0
+grow_vertical = 2
+scale = Vector2(0.997, 1)
+
+[node name="bullet1" type="TextureRect" parent="Control/Bullets_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_318vg")
+expand_mode = 3
+
+[node name="bullet2" type="TextureRect" parent="Control/Bullets_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_318vg")
+expand_mode = 3
+
+[node name="bullet3" type="TextureRect" parent="Control/Bullets_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_318vg")
+expand_mode = 3
+
+[node name="bullet4" type="TextureRect" parent="Control/Bullets_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_318vg")
+expand_mode = 3
+
+[node name="bullet5" type="TextureRect" parent="Control/Bullets_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_318vg")
+expand_mode = 3
+
+[node name="bullet6" type="TextureRect" parent="Control/Bullets_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_318vg")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Control/Bullets_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6/6"
+label_settings = SubResource("LabelSettings_w8tcp")
+
+[node name="Timer_container" type="HBoxContainer" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 11.0
+offset_right = -9.0
+offset_bottom = 51.0
+grow_horizontal = 0
+scale = Vector2(0.988448, 0.994189)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Timer_container"]
+texture_filter = 1
+position = Vector2(-14.3669, 18.1052)
+scale = Vector2(1.01169, 0.960754)
+sprite_frames = SubResource("SpriteFrames_5syde")
+
+[node name="Label" type="Label" parent="Control/Timer_container"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "10:00s"
+label_settings = SubResource("LabelSettings_svhta")

@@ -11,6 +11,8 @@ var municao_atual: int = 6
 var maximo_municao: int = 6
 var recarregar: bool = false
 
+signal remaining_bullets(current_bullets: int, max_bullets: int, recarregando: bool)
+
 func _ready() -> void:
 	#conectando sinal de mudança de frame da animação de gun a função de gerar bala
 	gun.frame_changed.connect(_criar_bala)
@@ -66,8 +68,10 @@ func _criar_bala():
 		bullet_instance.rotation = rotation
 		
 		municao_atual = municao_atual-1
+		emit_signal("remaining_bullets", municao_atual, maximo_municao, recarregar)
 	
 func _recarregar_arma():
 	if gun.animation == "reload":
 		municao_atual = maximo_municao
+		emit_signal("remaining_bullets", municao_atual, maximo_municao, recarregar)
 		recarregar = false

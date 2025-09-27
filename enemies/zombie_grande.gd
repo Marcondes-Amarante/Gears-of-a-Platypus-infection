@@ -13,3 +13,9 @@ func _updata_animation(direction: Vector2):
 		animation.play("zombie_big_walk_left")
 	else:
 		animation.play("zombie_big_walk_right")
+
+func hit_flash_effect():
+	var tween = create_tween()
+	tween.tween_property(animation, "modulate", Color(1, 0, 0, 0.5), 0.05)
+	tween.tween_property(animation, "modulate", Color(1, 1, 1, 1), 0.05)
+	tween.set_loops(1)

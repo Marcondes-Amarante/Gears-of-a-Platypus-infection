@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwwxur7yk6sua"]
+[gd_scene load_steps=7 format=3 uid="uid://dwwxur7yk6sua"]
 
+[ext_resource type="PackedScene" uid="uid://1s1ac1onlmuy" path="res://hud/hud.tscn" id="1_3wy1v"]
+[ext_resource type="Script" uid="uid://bt415mw2vbqa0" path="res://main/main.gd" id="1_kfbq2"]
 [ext_resource type="PackedScene" uid="uid://bpo3tleomk4tn" path="res://main_character/player.tscn" id="1_pjrb6"]
 [ext_resource type="Script" uid="uid://clkibwymr7wbc" path="res://main/spauner.gd" id="2_c651c"]
 [ext_resource type="PackedScene" uid="uid://b0kjxyw8bss2f" path="res://enemies/zombieGrande.tscn" id="3_c651c"]
 [ext_resource type="PackedScene" uid="uid://ckvi528v88gmh" path="res://enemies/batV2.tscn" id="4_3wy1v"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_kfbq2")
+
+[node name="Hud" parent="." instance=ExtResource("1_3wy1v")]
 
 [node name="Node2D" type="Node2D" parent="."]
 

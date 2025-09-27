@@ -3,12 +3,13 @@ extends Node2D
 @export var big_zombie = PackedScene
 var qtd_zombies_horde: int = 1
 @export var bat = PackedScene
-var qtd_bats: int = 3 
+var qtd_bats: int = 2 
 
-@export var cooldown: float = 3.0
+@export var cooldown: float = 5.0
 
-@export var max_time: float = 600.0
-var tempo_atual: float = 0.0
+@export var max_time: float = 0.0
+var tempo_atual: float = 600.0
+signal remaining_time(tempo_atual: float)
 
 @onready var spawn_points: Array[Marker2D] = []
 
@@ -29,23 +30,24 @@ func _ready() -> void:
 	timer.timeout.connect(spawnar_hordas)
 	
 func _process(delta: float) -> void:
-	tempo_atual += delta
+	tempo_atual -= delta
+	emit_signal("remaining_time", tempo_atual)
 	
-	if tempo_atual >= 180:
+	if tempo_atual <= 420:
 		configurar_dificuldade(1)
-	elif tempo_atual >= 360:
+	elif tempo_atual <= 240:
 		configurar_dificuldade(2)
 	
 func configurar_dificuldade(dificuldade: int):
 	
 	if dificuldade == 1:
+		timer.wait_time = 3.0
+		qtd_zombies_horde = 2
+		qtd_bats = 3
+	elif dificuldade == 2:
 		timer.wait_time = 2.0
 		qtd_zombies_horde = 3
 		qtd_bats = 5
-	elif dificuldade == 2:
-		timer.wait_time = 1.0
-		qtd_zombies_horde = 5
-		qtd_bats = 7
 		
 func spawnar_hordas():
 	

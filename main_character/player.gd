@@ -14,6 +14,8 @@ var tempo_empurrao: float = 0.0
 #obtendo referência dos sprites
 @onready var sprite: AnimatedSprite2D = $body
 
+signal remaining_health(current_health: int, max_health: int)
+
 func _ready():
 	
 	#definindo nó raiz para o centro da tela
@@ -100,6 +102,9 @@ func decrease_health(qtd_damage: int, direcao_inimigo: Vector2):
 	
 	#acionando efeito de flash de dano
 	hit_flash_effect()
+	
+	#acionando sinal para decrescimo de saúde
+	emit_signal("remaining_health", current_health, max_health)
 		
 	if current_health <= 0:
 		die()
