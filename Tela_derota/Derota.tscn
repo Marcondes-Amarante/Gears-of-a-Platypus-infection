@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsdoiuajvkdyl"]
+
+[ext_resource type="Texture2D" uid="uid://yohfw532bt8b" path="res://Tela_derota/Gemini_Generated_Image_mktalemktalemkta.png" id="1_dpiia"]
+[ext_resource type="Script" uid="uid://cd367ro22rk8h" path="res://Tela_derota/menu.gd" id="1_k04ei"]
+[ext_resource type="Script" uid="uid://dktmkibpuvyog" path="res://Tela_derota/retray.gd" id="2_rfwk0"]
+[ext_resource type="Script" uid="uid://dfaavw5ekwleq" path="res://Tela_derota/quit.gd" id="3_j5dbg"]
+[ext_resource type="Texture2D" uid="uid://b1x316uk088xg" path="res://Tela_derota/Gemini_Generated_Image_2n14l32n14l32n14.png" id="3_rfwk0"]
+
+[node name="Derota" type="Node2D"]
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(580.5, 328)
+scale = Vector2(1.1220703, 0.62890625)
+texture = ExtResource("1_dpiia")
+
+[node name="menu" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 319.0
+offset_right = 699.0
+offset_bottom = 399.0
+flat = true
+script = ExtResource("1_k04ei")
+
+[node name="Im1" type="Sprite2D" parent="menu"]
+position = Vector2(-31, 39)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_rfwk0")
+
+[node name="retray" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 420.0
+offset_right = 699.0
+offset_bottom = 500.0
+flat = true
+script = ExtResource("2_rfwk0")
+
+[node name="Im2" type="Sprite2D" parent="retray"]
+position = Vector2(-32, 39)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_rfwk0")
+
+[node name="quit" type="Button" parent="."]
+offset_left = 491.0
+offset_top = 517.0
+offset_right = 697.0
+offset_bottom = 596.0
+flat = true
+script = ExtResource("3_j5dbg")
+
+[node name="Im3" type="Sprite2D" parent="quit"]
+position = Vector2(-29.00003, 36)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_rfwk0")

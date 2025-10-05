@@ -108,6 +108,7 @@ func decrease_health(qtd_damage: int, direcao_inimigo: Vector2):
 		
 	if current_health <= 0:
 		die()
+		get_tree().change_scene_to_file("res://Tela_derota/Derota.tscn")
 
 func hit_flash_effect():
 	var tween = create_tween()

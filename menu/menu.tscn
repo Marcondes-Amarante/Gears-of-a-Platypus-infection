@@ -1,9 +1,10 @@
-[gd_scene load_steps=226 format=3 uid="uid://bh7kc87sltjnc"]
+[gd_scene load_steps=227 format=3 uid="uid://bh7kc87sltjnc"]
 
 [ext_resource type="Script" uid="uid://dj22gmcrwcnxq" path="res://menu/menu.gd" id="1_g18jx"]
 [ext_resource type="Texture2D" uid="uid://bc0xqy6wf2axh" path="res://menu/Vídeo sem título ‐ Feito com o Clipchamp (6) (1).png" id="1_j0t7f"]
 [ext_resource type="Script" uid="uid://dl7dm11twgdmu" path="res://menu/jogar.gd" id="2_6nwqt"]
 [ext_resource type="Script" uid="uid://k8pa4b4mbhc2" path="res://menu/sair.gd" id="3_pbjm4"]
+[ext_resource type="Texture2D" uid="uid://b1x316uk088xg" path="res://Tela_derota/Gemini_Generated_Image_2n14l32n14l32n14.png" id="5_svuvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g18jx"]
 atlas = ExtResource("1_j0t7f")
@@ -1556,23 +1557,35 @@ animations = [{
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_g18jx")
 
-[node name="jogar" type="Button" parent="."]
-offset_left = 452.00006
-offset_top = 503.00003
-offset_right = 698.0
-offset_bottom = 565.6708
-script = ExtResource("2_6nwqt")
-
-[node name="sair" type="Button" parent="."]
-offset_left = 452.00003
-offset_top = 586.0
-offset_right = 699.0
-offset_bottom = 643.99384
-script = ExtResource("3_pbjm4")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(576.25, 323.00003)
 scale = Vector2(1.0662036, 1.0690789)
 sprite_frames = SubResource("SpriteFrames_cobdo")
 frame = 97
 frame_progress = 0.07339422
+
+[node name="jogar" type="Button" parent="."]
+offset_left = 452.00006
+offset_top = 503.00003
+offset_right = 698.0
+offset_bottom = 565.6708
+flat = true
+script = ExtResource("2_6nwqt")
+
+[node name="Imagem" type="Sprite2D" parent="jogar"]
+position = Vector2(-30.000061, 27.99997)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("5_svuvw")
+
+[node name="sair" type="Button" parent="."]
+offset_left = 452.00003
+offset_top = 586.0
+offset_right = 699.0
+offset_bottom = 643.99384
+flat = true
+script = ExtResource("3_pbjm4")
+
+[node name="Imagem2" type="Sprite2D" parent="sair"]
+position = Vector2(-29.00003, 26)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("5_svuvw")
