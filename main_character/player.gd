@@ -114,6 +114,6 @@ func hit_flash_effect():
 	tween.tween_property(sprite, "modulate", Color(1, 0, 0, 0.5), 0.05)
 	tween.tween_property(sprite, "modulate", Color(1, 1, 1, 1), 0.05)
 	tween.set_loops(1)
-
+	
 func die():
 	queue_free()

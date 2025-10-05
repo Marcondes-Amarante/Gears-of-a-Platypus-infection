@@ -89,24 +89,25 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e552j"]
-size = Vector2(22, 31)
+size = Vector2(26, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_155jy"]
-size = Vector2(47, 40)
+size = Vector2(33, 31)
 
 [node name="CharacterBody2D" instance=ExtResource("1_6nqi6")]
 script = ExtResource("2_e552j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 texture_filter = 1
-scale = Vector2(1.5, 1.5)
+position = Vector2(-8, -7.5)
+scale = Vector2(1, 1.03125)
 sprite_frames = SubResource("SpriteFrames_bs8ga")
 animation = &"bat_fly_right"
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(6, -3.5)
+position = Vector2(-10, -10.5)
 shape = SubResource("RectangleShape2D_e552j")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-3.5, -5)
+position = Vector2(-7, -7)
 shape = SubResource("RectangleShape2D_155jy")

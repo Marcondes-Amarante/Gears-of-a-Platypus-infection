@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwwxur7yk6sua"]
+[gd_scene load_steps=9 format=3 uid="uid://dwwxur7yk6sua"]
 
 [ext_resource type="PackedScene" uid="uid://1s1ac1onlmuy" path="res://hud/hud.tscn" id="1_3wy1v"]
 [ext_resource type="Script" uid="uid://bt415mw2vbqa0" path="res://main/main.gd" id="1_kfbq2"]
@@ -6,34 +6,120 @@
 [ext_resource type="Script" uid="uid://clkibwymr7wbc" path="res://main/spauner.gd" id="2_c651c"]
 [ext_resource type="PackedScene" uid="uid://b0kjxyw8bss2f" path="res://enemies/zombieGrande.tscn" id="3_c651c"]
 [ext_resource type="PackedScene" uid="uid://ckvi528v88gmh" path="res://enemies/batV2.tscn" id="4_3wy1v"]
+[ext_resource type="Texture2D" uid="uid://d4in7hc2k27tc" path="res://Gemini_Generated_Image_zg6pcbzg6pcbzg6p.png" id="7_4dugh"]
+[ext_resource type="Script" uid="uid://ce5tt8oxdcjt1" path="res://main/collision_polygon_2d.gd" id="8_67ri8"]
 
-[node name="Main" type="Node"]
+[node name="plano_fundo" type="Node2D"]
+position = Vector2(-16, -61)
+
+[node name="Main" type="Node" parent="."]
 script = ExtResource("1_kfbq2")
 
-[node name="Hud" parent="." instance=ExtResource("1_3wy1v")]
+[node name="Hud" parent="Main" instance=ExtResource("1_3wy1v")]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="Main"]
 
-[node name="Player" parent="Node2D" instance=ExtResource("1_pjrb6")]
+[node name="Player" parent="Main/Node2D" instance=ExtResource("1_pjrb6")]
+position = Vector2(-23, -22)
 
-[node name="Spauner" type="Node2D" parent="."]
+[node name="Spauner" type="Node2D" parent="Main"]
 script = ExtResource("2_c651c")
 big_zombie = ExtResource("3_c651c")
 bat = ExtResource("4_3wy1v")
 
-[node name="spawnPoint1" type="Marker2D" parent="Spauner"]
+[node name="spawnPoint1" type="Marker2D" parent="Main/Spauner"]
+position = Vector2(90, -27)
 
-[node name="spawnPoint2" type="Marker2D" parent="Spauner"]
-position = Vector2(563, 2)
+[node name="spawnPoint2" type="Marker2D" parent="Main/Spauner"]
+position = Vector2(168, -19)
 
-[node name="spawnPoint3" type="Marker2D" parent="Spauner"]
-position = Vector2(1152, 1)
+[node name="spawnPoint3" type="Marker2D" parent="Main/Spauner"]
+position = Vector2(1076, -24)
 
-[node name="spawnPoint4" type="Marker2D" parent="Spauner"]
-position = Vector2(2, 645)
+[node name="spawnPoint4" type="Marker2D" parent="Main/Spauner"]
+position = Vector2(537, 686)
 
-[node name="spawnPoint5" type="Marker2D" parent="Spauner"]
+[node name="spawnPoint5" type="Marker2D" parent="Main/Spauner"]
 position = Vector2(582, 646)
 
-[node name="spawnPoint6" type="Marker2D" parent="Spauner"]
-position = Vector2(1149, 646)
+[node name="spawnPoint6" type="Marker2D" parent="Main/Spauner"]
+position = Vector2(1002, -17)
+
+[node name="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p" type="Sprite2D" parent="."]
+position = Vector2(595, 388.5)
+scale = Vector2(0.92467946, 0.7800481)
+texture = ExtResource("7_4dugh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p"]
+position = Vector2(-643.4662, -498.04623)
+scale = Vector2(1.0814558, 1.2819723)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(6.1035156e-05, 0)
+polygon = PackedVector2Array(167.99988, 366, 162, 371, 163, 379, 172, 383, 180, 380, 186, 376, 179.99988, 366)
+script = ExtResource("8_67ri8")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(-6.1035156e-05, 0)
+polygon = PackedVector2Array(304, 285, 313, 286, 319, 283, 317, 277, 307, 276)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(-6.1035156e-05, 0)
+polygon = PackedVector2Array(951, 173, 951, 177, 949, 179, 942, 180, 939, 177, 940, 173, 946, 172)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(-6.1035156e-05, 0)
+polygon = PackedVector2Array(864, 221, 859, 221, 854, 218, 856, 213, 865, 215)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(-6.1035156e-05, 0)
+polygon = PackedVector2Array(65, 70, 66, 475, 66, 671, 523, 671, 524, 709, 17, 708, 19, 61)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(-6.1035156e-05, 0)
+polygon = PackedVector2Array(655, 669, 656, 709, 1167, 707, 1170, 258, 1169, 60, 1138, 62, 1137, 64, 1124, 64, 1125, 487, 1124, 665)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(892.99994, 111, 892.99994, 189, 811.99994, 192, 810.99994, 184, 668.99994, 185, 668.99994, 213, 662.99994, 213, 663.99994, 227, 636.99994, 226, 636.99994, 214, 555.99994, 215, 555.99994, 226, 531.99994, 226, 533.99994, 209, 527.99994, 208, 527.99994, 196, 512.99994, 197, 509.99994, 182, 384.99994, 188, 382.99994, 192, 304.99994, 191, 304.99994, 110, 303.99994, 62, 735.99994, 62, 892.99994, 64, 891.99994, 95)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(-6.1035156e-05, 0)
+polygon = PackedVector2Array(142, 221, 148, 223, 152, 222, 152, 217, 147, 216)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(249.99994, 167, 251.99994, 172, 257.99994, 172, 260.99994, 168, 259.99994, 164, 251.99994, 164)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(342.99994, 219, 344.99994, 218, 344.99994, 214, 339.99994, 214, 336.99994, 214, 336.99994, 218)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(697.99994, 219, 703.99994, 222, 710.99994, 221, 713.99994, 218, 710.99994, 215, 704.99994, 215)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(6.1035156e-05, 0)
+polygon = PackedVector2Array(905.99994, 289, 906.99994, 295, 913.99994, 296, 920.99994, 294, 919.99994, 290, 915.99994, 288)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(1014.99994, 210, 1014.99994, 215, 1018.99994, 217, 1027, 216, 1030, 212, 1026, 209, 1021.99994, 209)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(302.99994, 654, 305.99994, 659, 313.99994, 660, 320.99994, 658, 321.99994, 653, 316.99994, 650, 306.99994, 650)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(203.99994, 599, 206.99994, 602, 212.99994, 602, 217.99994, 599, 218.99994, 596, 216.99994, 594, 207.99994, 594)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(996.99994, 595, 1001.99994, 598, 1008.99994, 595, 1008.99994, 591, 1003.99994, 591, 997.99994, 591)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(1064, 606, 1069, 612, 1072, 610, 1068, 604)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(522.99994, 708, 522.99994, 773, 657.99994, 772, 655.99994, 707, 670.99994, 707, 673.99994, 772, 675.99994, 783, 509.99994, 783, 510.99994, 708)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+polygon = PackedVector2Array(891.99994, 62, 891.99994, -7, 1122, -9, 1125, 64, 1151, 64, 1150, -31, 870.99994, -33, 871.99994, 62)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="GeminiGeneratedImageZg6Pcbzg6Pcbzg6p/StaticBody2D"]
+position = Vector2(-827.00006, 4)
+polygon = PackedVector2Array(891.99994, 62, 891.99994, -7, 1122, -9, 1125, 64, 1151, 64, 1150, -31, 870.99994, -33, 871.99994, 62)

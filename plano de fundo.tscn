@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpug5s6q5wf7d"]
+
+[ext_resource type="Texture2D" uid="uid://bcfya7yyvv1xh" path="res://main/ChatGPT Image 4 de out. de 2025, 16_07_35.png" id="1_ys2pk"]
+
+[node name="PlanoDeFundo" type="Node2D"]
+
+[node name="ChatGptImage4DeOut_De2025,160735" type="Sprite2D" parent="."]
+position = Vector2(580, 768)
+scale = Vector2(1.1308594, 1)
+texture = ExtResource("1_ys2pk")

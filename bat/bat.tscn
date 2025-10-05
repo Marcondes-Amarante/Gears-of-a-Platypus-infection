@@ -98,8 +98,8 @@ texture_filter = 1
 script = ExtResource("1_6myum")
 
 [node name="muv" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(8.5, 4.5)
-scale = Vector2(1.59375, 1.63333)
+position = Vector2(-8.999993, 14.000002)
+scale = Vector2(0.5000004, 0.46666655)
 sprite_frames = SubResource("SpriteFrames_v4l76")
 animation = &"direita"
 frame_progress = 0.546309
