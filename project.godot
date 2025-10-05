@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gears_of_a_platypus_infection"
-run/main_scene="uid://dwwxur7yk6sua"
+run/main_scene="uid://bh7kc87sltjnc"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
