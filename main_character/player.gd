@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@export var drop_scene: PackedScene
 
 var walk_speed = 100
 var run_speed = 200

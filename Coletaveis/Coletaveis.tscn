@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c635owf4kwlyy"]
+
+[ext_resource type="Script" uid="uid://dq1myuawqodul" path="res://Coletaveis/area_coleta.gd" id="2_v2t1b"]
+[ext_resource type="Texture2D" uid="uid://vbx37hvfcbku" path="res://Coletaveis/Gemini_Generated_Image_ua7824ua7824ua78.png" id="2_voq6a"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="GeminiGeneratedImageUa7824Ua7824Ua78" type="Sprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_voq6a")
+
+[node name="area coleta" type="Area2D" parent="."]
+scale = Vector2(0.04, 0.04)
+script = ExtResource("2_v2t1b")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="area coleta"]
+position = Vector2(-15475, -7875)
+scale = Vector2(25, 25)
+polygon = PackedVector2Array(606, 304, 604, 306, 603, 309, 603, 312, 603, 315, 604, 317, 606, 320, 609, 323, 613, 327, 619, 331, 624, 329, 629, 324, 634, 318, 636, 312, 634, 306, 630, 302, 625, 301, 620, 303, 617, 302, 612, 301)

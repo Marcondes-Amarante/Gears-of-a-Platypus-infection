@@ -1,4 +1,6 @@
 extends  CharacterBody2D
+var Coletaveis = preload("res://Coletaveis/Coletaveis.tscn")
+var Xp = preload("res://Coletaveis/XP.tscn")
 
 #script para deinição de comportamentos e atributos padrões compartilhados entre inimigos
 @export var max_health: int = 100
@@ -42,6 +44,17 @@ func _updata_animation(direction: Vector2):
 	pass
 
 func die():
+	var lot = randi_range(0, 100)
+	if lot == 99:
+		print("Inimigo morreu em:", global_position)
+		var drop = Coletaveis.instantiate()
+		get_tree().get_current_scene().add_child(drop)
+		drop.global_position = global_position
+	else:
+		print("Inimigo morreu em:", global_position)
+		var drop = Xp.instantiate()
+		get_tree().get_current_scene().add_child(drop)
+		drop.global_position = global_position
 	queue_free()
 
 func hit_flash_effect():
