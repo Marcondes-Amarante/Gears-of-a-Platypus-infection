@@ -1,7 +1,7 @@
 [gd_scene load_steps=227 format=3 uid="uid://bh7kc87sltjnc"]
 
 [ext_resource type="Script" uid="uid://dj22gmcrwcnxq" path="res://menu/menu.gd" id="1_g18jx"]
-[ext_resource type="Texture2D" uid="uid://bc0xqy6wf2axh" path="res://menu/Vídeo sem título ‐ Feito com o Clipchamp (6) (1).png" id="1_j0t7f"]
+[ext_resource type="Texture2D" uid="uid://bc0xqy6wf2axh" path="res://menu/visual_menu.png" id="1_j0t7f"]
 [ext_resource type="Script" uid="uid://dl7dm11twgdmu" path="res://menu/jogar.gd" id="2_6nwqt"]
 [ext_resource type="Script" uid="uid://k8pa4b4mbhc2" path="res://menu/sair.gd" id="3_pbjm4"]
 [ext_resource type="Texture2D" uid="uid://b1x316uk088xg" path="res://Tela_derota/Gemini_Generated_Image_2n14l32n14l32n14.png" id="5_svuvw"]
