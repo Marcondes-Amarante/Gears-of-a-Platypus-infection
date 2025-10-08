@@ -3,6 +3,7 @@ extends CanvasLayer
 
 @onready var hearts = $Control/Hearts_container.get_children()
 var empty_hearth = preload("res://hud/sprite_heart_empty.png")
+var hearth_full = preload("res://hud/sprite_heart_full.png")
 
 @onready var bullets = $Control/Bullets_container.get_children()
 @onready var bullets_text_indicator = $Control/Bullets_container/Label
@@ -15,6 +16,8 @@ func _ready() -> void:
 	hour_glass.play("default")
 	
 func update_health_ui(current_health: int, max_health: int):
+	for i in range(max_health):
+		hearts[i].texture = hearth_full
 	for i in range(max_health-1, current_health-1, -1):
 		hearts[i].texture = empty_hearth
 

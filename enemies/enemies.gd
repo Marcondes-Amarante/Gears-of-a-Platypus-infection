@@ -45,7 +45,7 @@ func _updata_animation(direction: Vector2):
 
 func die():
 	var lot = randi_range(0, 100)
-	if lot == 99:
+	if lot > 79:
 		print("Inimigo morreu em:", global_position)
 		var drop = Coletaveis.instantiate()
 		get_tree().get_current_scene().add_child(drop)

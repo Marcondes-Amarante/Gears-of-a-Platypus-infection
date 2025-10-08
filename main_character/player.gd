@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 @export var drop_scene: PackedScene
 
 var walk_speed = 100
@@ -110,6 +111,17 @@ func decrease_health(qtd_damage: int, direcao_inimigo: Vector2):
 	if current_health <= 0:
 		die()
 		get_tree().change_scene_to_file("res://Tela_derota/Derota.tscn")
+
+func increase_health(qtd: int):
+	current_health += qtd
+	if current_health > max_health:
+		current_health = max_health
+	
+	print("player ganhou ", qtd, " de vida e tem ", current_health, " de vida")
+	
+	# atualiza o HUD também
+	emit_signal("remaining_health", current_health, max_health)
+
 
 func hit_flash_effect():
 	var tween = create_tween()
