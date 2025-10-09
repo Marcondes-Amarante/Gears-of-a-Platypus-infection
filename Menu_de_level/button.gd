@@ -13,7 +13,7 @@ func _on_button_pressed():
 			if Global.max_health >= 10:
 				Global.max_health = Global.max_health - 10
 	Global.xp = 0
-	Global.xp_r = Global.xp_r + 5
+	Global.xp_r = Global.xp_r + 3
 	print(Global.xp_r)
 	get_tree().paused = false
 	get_parent().queue_free()

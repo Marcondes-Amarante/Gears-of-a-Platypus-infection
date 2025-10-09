@@ -33,10 +33,14 @@ func _process(delta: float) -> void:
 	tempo_atual -= delta
 	emit_signal("remaining_time", tempo_atual)
 	
+	if tempo_atual <= 0:
+		get_tree().change_scene_to_file("res://vitoria/vitoria.tscn")
+	
 	if tempo_atual <= 420:
 		configurar_dificuldade(1)
 	elif tempo_atual <= 240:
 		configurar_dificuldade(2)
+		
 	
 func configurar_dificuldade(dificuldade: int):
 	

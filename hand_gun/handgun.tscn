@@ -397,7 +397,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"reload",
-"speed": 40.0
+"speed": 70.0
 }]
 
 [node name="Node2D" type="Node2D"]
