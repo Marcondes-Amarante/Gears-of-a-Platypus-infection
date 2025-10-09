@@ -6,4 +6,5 @@ func _ready():
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		print("Jogador tocou no XP!")
+		Global.xp = Global.xp + 1
 		queue_free() 

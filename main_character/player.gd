@@ -2,11 +2,12 @@ extends CharacterBody2D
 class_name Player
 @export var drop_scene: PackedScene
 
-var walk_speed = 100
-var run_speed = 200
+var run_speed = Global.walk_speed + 100
 
 @export var max_health: int = 4
 var current_health: int
+var xp_r: int = 1
+var xp: int = 0
 
 @export var forca_empurrao: float = 200.0
 @export var duracao_empurrao: float = 0.2
@@ -53,7 +54,7 @@ func _process(delta: float):
 		#normalizando vetor para garantir que personagem se mova na mesma proporção de comprimento em todas as direções
 		vetor_direcao_input = vetor_direcao_input.normalized()
 		
-	var speed = walk_speed
+	var speed = Global.walk_speed
 	
 	#trocando velocidades caso shift seja apertado
 	#se tanto a direção do mouse como a global são a mesma então muda-se a velocidade
@@ -67,7 +68,7 @@ func _process(delta: float):
 	
 	#geranciando sprites
 	if vetor_direcao_input != Vector2.ZERO:
-		if speed == walk_speed:
+		if speed == Global.walk_speed:
 			sprite.animation = "Walk"
 			
 		#tratando caso do personagem corre para trás:

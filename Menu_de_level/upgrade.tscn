@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://c45r51ygiqpns"]
+
+[ext_resource type="Script" uid="uid://c1ruso6paa803" path="res://Menu_de_level/upgrade.gd" id="1_vyjkg"]
+[ext_resource type="Texture2D" uid="uid://b3iewo50l3bkm" path="res://Menu_de_level/ChatGPT Image 8 de out. de 2025, 17_00_49.png" id="2_2obe0"]
+[ext_resource type="Script" uid="uid://30r1si18a33b" path="res://Menu_de_level/button.gd" id="2_4yxfx"]
+[ext_resource type="Texture2D" uid="uid://cs3s12gyamlab" path="res://Menu_de_level/ChatGPT Image 7 de out. de 2025, 20_35_54.png" id="2_sk0m2"]
+[ext_resource type="Texture2D" uid="uid://c53f1gc0c5iwj" path="res://Menu_de_level/ChatGPT Image 7 de out. de 2025, 20_50_01.png" id="3_4yxfx"]
+[ext_resource type="Texture2D" uid="uid://40lbtu5p3ejp" path="res://Menu_de_level/Gemini_Generated_Image_9ui92t9ui92t9ui9.png" id="6_toagn"]
+[ext_resource type="Script" uid="uid://27k6vr5ka853" path="res://Menu_de_level/button_3.gd" id="7_vupg1"]
+[ext_resource type="Script" uid="uid://53alu6ootar4" path="res://Menu_de_level/button_2.gd" id="8_c3o80"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Upgrade" type="Node2D" parent="."]
+position = Vector2(314, 224)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vyjkg")
+
+[node name="ChatGptImage8DeOut_De2025,170049" type="Sprite2D" parent="Upgrade"]
+position = Vector2(526.00006, 190.00005)
+scale = Vector2(0.752849, 0.86697495)
+texture = ExtResource("2_2obe0")
+
+[node name="Button" type="Button" parent="Upgrade"]
+offset_left = 86.0
+offset_top = -6.0
+offset_right = 598.0
+offset_bottom = 762.0
+scale = Vector2(0.5, 0.5)
+flat = true
+script = ExtResource("2_4yxfx")
+metadata/_edit_use_anchors_ = true
+
+[node name="velocidade" type="Sprite2D" parent="Upgrade/Button"]
+position = Vector2(258, 385)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0m2")
+
+[node name="knockback" type="Sprite2D" parent="Upgrade/Button"]
+position = Vector2(259, 384)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4yxfx")
+
+[node name="dano" type="Sprite2D" parent="Upgrade/Button"]
+position = Vector2(258, 386.25012)
+scale = Vector2(0.6105769, 0.6189906)
+texture = ExtResource("6_toagn")
+
+[node name="Button3" type="Button" parent="Upgrade"]
+offset_left = 678.0
+offset_top = -4.0
+offset_right = 1198.0
+offset_bottom = 772.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("7_vupg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="knockback" type="Sprite2D" parent="Upgrade/Button3"]
+position = Vector2(264, 389)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4yxfx")
+
+[node name="velocidade" type="Sprite2D" parent="Upgrade/Button3"]
+position = Vector2(264, 390)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0m2")
+
+[node name="dano" type="Sprite2D" parent="Upgrade/Button3"]
+position = Vector2(261.6084, 385.91663)
+scale = Vector2(0.62113404, 0.6187235)
+texture = ExtResource("6_toagn")
+
+[node name="Button2" type="Button" parent="Upgrade"]
+offset_left = 384.0
+offset_top = -4.0
+offset_right = 896.0
+offset_bottom = 764.0
+scale = Vector2(0.5, 0.5)
+flat = true
+script = ExtResource("8_c3o80")
+metadata/_edit_use_anchors_ = true
+
+[node name="knockback" type="Sprite2D" parent="Upgrade/Button2"]
+position = Vector2(259, 382)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4yxfx")
+
+[node name="velocidade" type="Sprite2D" parent="Upgrade/Button2"]
+position = Vector2(258, 383)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0m2")
+
+[node name="dano" type="Sprite2D" parent="Upgrade/Button2"]
+position = Vector2(256.61426, 383.88562)
+scale = Vector2(0.6139082, 0.61520123)
+texture = ExtResource("6_toagn")
